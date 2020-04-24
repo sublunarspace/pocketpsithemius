@@ -151,6 +151,9 @@ void setup() {
   digitalWrite(uv_LED, OFF);
 
   // OP AMP
+  #if Attiny == 84
+    pinMode(ANALOG, INPUT);
+  #endif
   pinMode(OPAMP, OUTPUT);
   digitalWrite(OPAMP, OFF);
 }
@@ -188,7 +191,11 @@ void loop() {
     if (pressed_btnC != last_btnC ) {
       if (pressed_btnC == true) {
         counterC++;
-        if (counterC > 2)counterC = 1;
+        #if Attiny == 84
+          if (counterC > 4)counterC = 1;
+        #else
+          if (counterC > 2)counterC = 1;
+        #endif
         pressButton_C();
       }
       last_btnC = pressed_btnC;
@@ -313,12 +320,29 @@ void pressButton_C() {
     counterC = 0;
     return;
   }
-  if (counterC == 1) { //1st press:
-    digitalWrite(OPAMP, ON);
-  }
-  if (counterC == 2) { //2nd press:
-    digitalWrite(OPAMP, OFF);
-  }
+  #if Attiny == 84
+    if (counterC == 1) { //1st press:
+      dimmer = true;
+    }
+    if (counterC == 2) { //2nd press:
+      dimmer = false;
+      digitalWrite(OPAMP, ON);
+    }
+    if (counterC == 3) { //3rd press:
+      dimmer = true;
+      digitalWrite(OPAMP, ON);
+    }
+    if (counterC == 4) { //2nd press:
+      digitalWrite(OPAMP, OFF);
+    }
+  #else
+    if (counterC == 1) { //1st press:
+      digitalWrite(OPAMP, ON);
+    }
+    if (counterC == 2) { //2nd press:
+      digitalWrite(OPAMP, OFF);
+    }
+  #endif
 }
 
 //---- SOFTWARE PWM ----
