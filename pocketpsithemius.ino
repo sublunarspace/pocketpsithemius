@@ -39,15 +39,15 @@ SOFTWARE.
 #endif
 
 #if Attiny == 84
-  #define btnA 6 //PA4 / Button A:
-  #define btnB 5 //PA5 / Button B:
-  #define btnC 4 //PA6/ Button C:
-  #define led_R 10 //PA0 / RED LED
-  #define led_G 9 //PA1/ GREEN LED
-  #define led_B 8 //PA2 / BLUE LED
-  #define uv_LED 7 //PA3 / UV LED
-  #define OPAMP 3 //PA7 / turns on the Op Amp circuit
-  #define ANALOG 2 //PB2 // Get analog
+  #define btnA    6 //PA4 / Button A:
+  #define btnB    5 //PA5 / Button B:
+  #define btnC    4 //PA6/ Button C:
+  #define led_R  10 //PA0 / RED LED
+  #define led_G   9 //PA1/ GREEN LED
+  #define led_B   8 //PA2 / BLUE LED
+  #define uv_LED  7 //PA3 / UV LED
+  #define OPAMP   3 //PA7 / turns on the Op Amp circuit
+  #define ANALOG  2 //PB2 // Get analog
 #endif
 
 #define ON      HIGH
