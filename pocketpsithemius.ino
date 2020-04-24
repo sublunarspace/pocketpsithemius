@@ -25,14 +25,31 @@ SOFTWARE.
 
 */
 
-#define btnA    9 //PB0 / Button A:
-#define btnB    8 //PB1 / Button B:
-#define btnC   13 //PA7 / Button C:
-#define led_R  12 //PA6 / RED LED
-#define led_G  14 //PA3 / GREEN LED
-#define led_B   1 //PA1 / BLUE LED
-#define uv_LED  6 //PB3 / UV LED
-#define OPAMP   3 //PB6 / turns on the Op Amp circuit
+#define Attiny  261 //84 or 261
+
+#if Attiny == 261
+  #define btnA    9 //PB0 / Button A:
+  #define btnB    8 //PB1 / Button B:
+  #define btnC   13 //PA7 / Button C:
+  #define led_R  12 //PA6 / RED LED
+  #define led_G  14 //PA3 / GREEN LED
+  #define led_B   1 //PA1 / BLUE LED
+  #define uv_LED  6 //PB3 / UV LED
+  #define OPAMP   3 //PB6 / turns on the Op Amp circuit
+#endif
+
+#if Attiny == 84
+  #define btnA 6 //PA4 / Button A:
+  #define btnB 5 //PA5 / Button B:
+  #define btnC 4 //PA6/ Button C:
+  #define led_R 10 //PA0 / RED LED
+  #define led_G 9 //PA1/ GREEN LED
+  #define led_B 8 //PA2 / BLUE LED
+  #define uv_LED 7 //PA3 / UV LED
+  #define OPAMP 3 //PA7 / turns on the Op Amp circuit
+  #define ANALOG 2 //PB2 // Get analog
+#endif
+
 #define ON      HIGH
 #define OFF     LOW
 
@@ -50,6 +67,7 @@ static bool last_btnC = false; //Previous state of button C
 bool enabled_LED = false; //turn on a tricolor LED
 bool was_on_LED  = false; //was LED on?
 bool usePWM      = false; //use softPWM for more nuanced colors
+bool dimmer      = false; //LED brightness follows analog input signal
 void offLeds() {
   analogWrite(led_R, 255);
   analogWrite(led_B, 255);
@@ -59,6 +77,9 @@ void offLeds() {
 //---- TIMER ----
 bool countDelay            = false; //are we counting ticks to time out the UV LEDs?
 static uint32_t delayCount = 0;
+#if Attiny == 84
+  uint32_t oldTime    = millis();
+#endif
 long lastDebounceTime      = 0;  // the last time the output pin was toggled
 long debounceDelay         = 50; // the debounce time; increase if the output flickers
 
@@ -80,11 +101,21 @@ void setColor(COLOR paint, bool full = true) {
   showColor();
 }
 
-void showColor() {
+void showColor() { // 100% of color
   if (enabled_LED == true) {
-    softPWM(led_R, selectedColor.r, 1);
-    softPWM(led_B, selectedColor.b, 1);
-    softPWM(led_G, selectedColor.g, 1);
+    #if Attiny == 84
+      byte full = 100;
+      if( dimmer == true ){
+        full = (255 / analogRead(ANALOG)) * full;
+      }
+      softPWM(led_R, selectedColor.r  - ((selectedColor.r / full) * full), 1);
+      softPWM(led_B, selectedColor.b - ((selectedColor.b / full) * full) , 1);
+      softPWM(led_G, selectedColor.g - ((selectedColor.g / full) * full) , 1);
+    #else
+      softPWM(led_R, selectedColor.r, 1);
+      softPWM(led_B, selectedColor.b, 1);
+      softPWM(led_G, selectedColor.g, 1);
+    #endif
   } else {
     offLeds();
   }
@@ -168,20 +199,25 @@ void loop() {
   showColor();
 
   //Counts up and turns UV LED off after 1min
-  if (countDelay == true) {
-    delayCount++;
-    counterB = 1;
-  }
-  else delayCount = 0;
-  if (delayCount > 1200000) {
-    //Turn the UV LED off
-    digitalWrite(uv_LED, LOW);
-    countDelay = false;
-    //Reenable all buttons
-    enabled_btnAC = true;
-    //LED Status back to before Button B was pushed
-    enabled_LED = was_on_LED;
-  }
+  #if Attiny == 261
+    if (countDelay == true) {
+      delayCount++;
+      counterB = 1;
+    }
+    else delayCount = 0;
+    if (delayCount > 1200000) {
+  #endif
+  #if Attiny == 84
+    if ( countDelay == true && ((millis()-oldTime) > 60000)) {
+  #endif
+      //Turn the UV LED off
+      digitalWrite(uv_LED, LOW);
+      countDelay = false;
+      //Reenable all buttons
+      enabled_btnAC = true;
+      //LED Status back to before Button B was pushed
+      enabled_LED = was_on_LED;
+    }
 }
 
 //---- BUTTON STATE MACHINE FUNCTIONS
@@ -249,6 +285,11 @@ void pressButton_B() {
     digitalWrite(OPAMP, OFF);
     enabled_btnB == true;
     digitalWrite(uv_LED, ON);
+    #if Attiny == 84
+      if ( countDelay == false ) {
+        oldTime    = millis();
+      }
+    #endif
     countDelay = true; // turn on delay counter in loop()
   }
   if (counterB == 2) { //2nd press:
