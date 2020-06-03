@@ -25,324 +25,216 @@ SOFTWARE.
 
 */
 
-#define Attiny  261 //84 or 261
+#include "OneButton.h"
 
-#if Attiny == 261
-  #define btnA    9 //PB0 / Button A:
-  #define btnB    8 //PB1 / Button B:
-  #define btnC   13 //PA7 / Button C:
-  #define led_R  12 //PA6 / RED LED
-  #define led_G  14 //PA3 / GREEN LED
-  #define led_B   1 //PA1 / BLUE LED
-  #define uv_LED  6 //PB3 / UV LED
-  #define OPAMP   3 //PB6 / turns on the Op Amp circuit
-#endif
+#define btnA            0 //PA0 / Button A:
+#define btnB            2 //PA1 / Button B:
+#define btnC            1 //PA2 / Button C:
+#define led_R           4 //PA4 / RED LED
+#define led_G           5 //PA5 / GREEN LED
+#define led_B           6 //PA6 / BLUE LED
+#define uv_LED          3 //PA3 / UV LED
+#define OPAMP           8 //PB2 / turns on the Op Amp circuit
+#define ANALOG          7 //PA7 / Get analog
 
-#if Attiny == 84
-  #define btnA    6 //PA4 / Button A:
-  #define btnB    5 //PA5 / Button B:
-  #define btnC    4 //PA6/ Button C:
-  #define led_R  10 //PA0 / RED LED
-  #define led_G   9 //PA1/ GREEN LED
-  #define led_B   8 //PA2 / BLUE LED
-  #define uv_LED  7 //PA3 / UV LED
-  #define OPAMP   3 //PA7 / turns on the Op Amp circuit
-  #define ANALOG  2 //PB2 // Get analog
-#endif
-
-#define ON      HIGH
-#define OFF     LOW
+#define ON              HIGH
+#define OFF             LOW
 
 //---- BUTTONS ----
+
 byte counterA         = 0; //count push btnA:
-byte counterB         = 0; //count push btnB:
 byte counterC         = 0; //count push btnC:
 bool enabled_btnAC    = true;  //Button A + C enabled or not
 bool enabled_btnB     = true;  //Button B enabled or not
-static bool last_btnA = false; //Previous state of button A
-static bool last_btnB = false; //Previous state of button B
-static bool last_btnC = false; //Previous state of button C
+
+OneButton buttonA(btnA, true); //Button A setup
+OneButton buttonB(btnB, true); //Button B setup
+OneButton buttonC(btnC, true); //Button C setup
 
 //---- LEDS ----
-bool enabled_LED = false; //turn on a tricolor LED
-bool was_on_LED  = false; //was LED on?
-bool usePWM      = false; //use softPWM for more nuanced colors
-bool dimmer      = false; //LED brightness follows analog input signal
+
+bool enabled_LED      = false; //turn on a tricolor LED
+bool was_on_LED       = false; //was LED on?
+bool usePWM           = false; //use softPWM for more nuanced colors
+
+//---- TIMER ----
+
+bool countDelay       = false; //are we counting ticks to time out the UV LEDs?
+uint32_t oldTime      = millis();
+
+//---- COLOR ----
+
+struct COLOR { //Creating structure for colors
+  byte r;
+  byte g;
+  byte b;
+};
+COLOR selectedColor   = { 0, 0, 0 };
+
+//---- PLANETARY COLORS ----
+
+COLOR white           = { 255 , 255 , 255 }; //Moon correspondence
+COLOR orange          = { 255 , 128 ,   0 }; //Mercury correspondence
+COLOR green           = {   0 , 255 ,   0 }; //Venus correspondence
+COLOR yellow          = { 255 , 255 ,   0 }; //Sol correspondence
+COLOR red             = { 255 ,   0 ,   0 }; //Mars correspondence
+COLOR blue            = {   0 , 128 , 255 }; //Jupiter correspondence
+COLOR purple          = { 128 ,   0 , 128 }; //Jupiter/Moon correspondence
+COLOR indigo          = { 111 ,   0 , 255 }; //Saturn correspondence
+COLOR grey            = {  40 ,  40 ,  40 }; //Saturn correspondence
+
+//---- DEVICE SETUP ----
+void setup() {
+
+  // BUTTONS
+  buttonA.attachClick(cycleColors);
+  buttonB.attachLongPressStart(ultraviolet);
+  buttonC.attachLongPressStart(opAmp);
+
+  // LEDS
+  pinMode(led_B, OUTPUT);
+  pinMode(led_G, OUTPUT);
+  pinMode(led_R, OUTPUT);
+  offLeds();
+
+  // UV LED
+  pinMode(uv_LED, OUTPUT);
+  digitalWrite(uv_LED, OFF);
+
+  // OP AMP
+  pinMode(ANALOG, INPUT);
+  pinMode(OPAMP, OUTPUT);
+  digitalWrite(OPAMP, OFF);
+
+}
+
+//---- DEVICE LOOP ----
+void loop() {
+
+  buttonA.tick();
+  buttonB.tick();
+  buttonC.tick();
+  showColor();
+
+  if ( countDelay == true && ((millis()-oldTime) > 60000)) { //If enabled, turns UV LED off after 1min
+    //Turn the UV LED off
+    digitalWrite(uv_LED, LOW);
+    countDelay = false;
+  }
+}
+
+//---- FUNCTIONS ----
+
 void offLeds() {
   analogWrite(led_R, 255);
   analogWrite(led_B, 255);
   analogWrite(led_G, 255);
 }
 
-//---- TIMER ----
-bool countDelay            = false; //are we counting ticks to time out the UV LEDs?
-static uint32_t delayCount = 0;
-#if Attiny == 84
-  uint32_t oldTime    = millis();
-#endif
-long lastDebounceTime      = 0;  // the last time the output pin was toggled
-long debounceDelay         = 50; // the debounce time; increase if the output flickers
-
-//---- COLOR ----
-struct COLOR { //Creating structure for colors
-  byte r;
-  byte g;
-  byte b;
-};
-COLOR selectedColor = { 0   ,   0 ,   0 };
-
 void setColor(COLOR paint, bool full = true) {
   //tricolor LED color
-  selectedColor = paint;
   selectedColor.r = paint.r;
   selectedColor.b = paint.b;
   selectedColor.g = paint.g;
-  //paint contains r g b value for pwm on pins
   showColor();
 }
 
 void showColor() { // 100% of color
   if (enabled_LED == true) {
-    #if Attiny == 84
-      byte full = 100;
-      if( dimmer == true ){
-        full = (255 / analogRead(ANALOG)) * full;
-      }
-      softPWM(led_R, selectedColor.r  - ((selectedColor.r / full) * full), 1);
-      softPWM(led_B, selectedColor.b - ((selectedColor.b / full) * full) , 1);
-      softPWM(led_G, selectedColor.g - ((selectedColor.g / full) * full) , 1);
-    #else
       softPWM(led_R, selectedColor.r, 1);
       softPWM(led_B, selectedColor.b, 1);
       softPWM(led_G, selectedColor.g, 1);
-    #endif
   } else {
     offLeds();
   }
 }
 
-//---- PLANETARY COLORS ----
-COLOR white         = { 255 , 255 , 255 }; //Moon correspondence
-COLOR orange        = { 255 , 128 ,   0 }; //Mercury correspondence
-COLOR green         = {   0 , 255 ,   0 }; //Venus correspondence
-COLOR yellow        = { 255 , 255 ,   0 }; //Sol correspondence
-COLOR red           = { 255 ,   0 ,   0 }; //Mars correspondence
-COLOR blue          = {   0 , 128 , 255 }; //Jupiter correspondence
-COLOR purple        = { 128 ,   0 , 128 }; //Jupiter/Moon correspondence
-COLOR indigo        = { 111 ,   0 , 255 }; //Saturn correspondence
-COLOR grey          = {  40 ,  40 ,  40 }; //Saturn correspondence
-
-//---- DEVICE SETUP ----
-void setup() {
-
-  //Buttons
-  pinMode(btnA, INPUT);
-  pinMode(btnB, INPUT);
-  pinMode(btnC, INPUT);
-
-  //LEDS
-  pinMode(led_B, OUTPUT);
-  pinMode(led_G, OUTPUT);
-  pinMode(led_R, OUTPUT);
-  offLeds();
-
-  //UV LED
-  pinMode(uv_LED, OUTPUT);
-  digitalWrite(uv_LED, OFF);
-
-  // OP AMP
-  #if Attiny == 84
-    pinMode(ANALOG, INPUT);
-  #endif
-  pinMode(OPAMP, OUTPUT);
-  digitalWrite(OPAMP, OFF);
+void cycleColors() {
+  counterA++;
+  if (enabled_btnAC == true) {
+    switch (counterA) {
+      case 1:
+        enabled_LED = true;
+        setColor(white, true);
+        break;
+      case 2:
+        usePWM = true;
+        setColor(orange, true);
+        break;
+      case 3:
+        usePWM = false;
+        setColor(green, true);
+        break;
+      case 4:
+        setColor(yellow, true);
+        break;
+      case 5:
+        setColor(red, true);
+        break;
+      case 6:
+        setColor(blue, true);
+        break;
+      case 7:
+        usePWM = true;
+        setColor(purple, true);
+        break;
+      case 8:
+        setColor(indigo, true);
+        break;
+      case 9:
+        setColor(grey, true);
+        break;
+      case 10:
+        enabled_LED = false;
+        counterA = 0;//TURN OFF
+        break;
+    }
+  }
 }
 
-//---- DEVICE LOOP ----
-void loop() {
-
-  // Detect and debounce button presses
-  if ( (millis() - lastDebounceTime) > debounceDelay) {
-    
-    //Button A:
-    bool pressed_btnA = !digitalRead(btnA);
-    if (pressed_btnA != last_btnA ) {
-      if (pressed_btnA == true) {
-        counterA++;
-        if (counterA > 10)counterA = 1;
-        pressButton_A();
-      }
-      last_btnA = pressed_btnA;
-    }
-  
-    //Button B:
-    bool pressed_btnB = !digitalRead(btnB);
-    if (pressed_btnB != last_btnB ) {
-      if (pressed_btnB == true) {
-        counterB++;
-        if (counterB > 2)counterB = 1;
-        pressButton_B();
-      }
-      last_btnB = pressed_btnB;
-    }
-  
-    //Button C:
-    bool pressed_btnC = !digitalRead(btnC);
-    if (pressed_btnC != last_btnC ) {
-      if (pressed_btnC == true) {
-        counterC++;
-        #if Attiny == 84
-          if (counterC > 4)counterC = 1;
-        #else
-          if (counterC > 2)counterC = 1;
-        #endif
-        pressButton_C();
-      }
-      last_btnC = pressed_btnC;
-    }
-    lastDebounceTime = millis(); //set the current time
-  }
-  
-  showColor();
-
-  //Counts up and turns UV LED off after 1min
-  #if Attiny == 261
-    if (countDelay == true) {
-      delayCount++;
-      counterB = 1;
-    }
-    else delayCount = 0;
-    if (delayCount > 1200000) {
-  #endif
-  #if Attiny == 84
-    if ( countDelay == true && ((millis()-oldTime) > 60000)) {
-  #endif
-      //Turn the UV LED off
-      digitalWrite(uv_LED, LOW);
+void ultraviolet() {
+  if (enabled_btnB == true) {
+    blinker(led_B, 500, 5);
+    if ( digitalRead(btnA) == LOW ) {
+      blinker(led_B, 50, 10);
+      enabled_btnB = false;
+      enabled_btnAC = false;
       countDelay = false;
-      //Reenable all buttons
-      enabled_btnAC = true;
-      //LED Status back to before Button B was pushed
-      enabled_LED = was_on_LED;
+      digitalWrite(uv_LED, ON);
+      return;
     }
-}
-
-//---- BUTTON STATE MACHINE FUNCTIONS
-//Button A:
-void pressButton_A() {
-  if (enabled_btnAC == false) {
-    counterA = 0;
-    return;//Chek if button is disabled
-  }
-  switch (counterA) {
-    case 1:
-      enabled_LED = true;
-      setColor(white, true);
-      break;
-    case 2:
-      usePWM = true;
-      setColor(orange, true);
-      break;
-    case 3:
-      usePWM = false;
-      setColor(green, true);
-      break;
-    case 4:
-      setColor(yellow, true);
-      break;
-    case 5:
-      setColor(red, true);
-      break;
-    case 6:
-      setColor(blue, true);
-      break;
-    case 7:
-      usePWM = true;
-      setColor(purple, true);
-      break;
-    case 8:
-      setColor(indigo, true);
-      break;
-    case 9:
-      setColor(grey, true);
-      break;
-    case 10:
-      enabled_LED = false;
-      counterA = 0;//TURN OFF
-      break;
-  }
-}
-
-//Button B:
-void pressButton_B() {
-  if (enabled_btnB == false) {
-    counterB = 0;
-    return;
-  }
-  if (counterB == 1) { //1st press:
-    //was color LED on when button was pushed?
-    was_on_LED = enabled_LED;
-    //Disable LED and buttons A and C
-    enabled_LED = false;
-    counterA = 0;
-    counterC = 0;
-    enabled_btnAC = false;
-    enabled_btnB == false;
-    //Turn off Op-Amp circuit
-    digitalWrite(OPAMP, OFF);
-    enabled_btnB == true;
     digitalWrite(uv_LED, ON);
-    #if Attiny == 84
-      if ( countDelay == false ) {
-        oldTime    = millis();
-      }
-    #endif
+    if ( countDelay == false ) {
+      oldTime    = millis();
+    }
     countDelay = true; // turn on delay counter in loop()
   }
-  if (counterB == 2) { //2nd press:
-    if (digitalRead(uv_LED) == ON) {
-      //Turn UV LED off
-      digitalWrite(uv_LED, OFF);
+}
+
+void opAmp() {
+  if (enabled_btnAC == true) {
+    counterC++;
+    if (counterC == 1) { //1st press:
+      blinker(led_G, 50, 2);
+      digitalWrite(OPAMP, ON);
     }
-    //Re-enable all buttons
-    enabled_btnAC = true;
-    enabled_btnB = true;
-    //LED Status back to before Button B was pushed
-    enabled_LED = was_on_LED;
-    //reset delay counter
-    countDelay = false;
+    if (counterC == 2) { //2nd press:
+      blinker(led_R, 50, 2);
+      digitalWrite(OPAMP, OFF);
+      counterC = 0;
+    }
   }
 }
 
-//Button C:
-void pressButton_C() {
-  if (enabled_btnAC == false) {
-    counterC = 0;
-    return;
+void blinker(byte pin, int len, byte rep) {
+  byte counter = 1;
+  while (counter <= rep) {
+    analogWrite(pin, 0);
+    delay(len);
+    offLeds();
+    delay(len);
+    counter++;
   }
-  #if Attiny == 84
-    if (counterC == 1) { //1st press:
-      dimmer = true;
-    }
-    if (counterC == 2) { //2nd press:
-      dimmer = false;
-      digitalWrite(OPAMP, ON);
-    }
-    if (counterC == 3) { //3rd press:
-      dimmer = true;
-      digitalWrite(OPAMP, ON);
-    }
-    if (counterC == 4) { //2nd press:
-      digitalWrite(OPAMP, OFF);
-    }
-  #else
-    if (counterC == 1) { //1st press:
-      digitalWrite(OPAMP, ON);
-    }
-    if (counterC == 2) { //2nd press:
-      digitalWrite(OPAMP, OFF);
-    }
-  #endif
 }
 
 //---- SOFTWARE PWM ----
