@@ -25,7 +25,8 @@ SOFTWARE.
 
 */
 
-#include "OneButton.h"
+#include <OneButton.h>
+#include <fix_fft.h>
 
 #define btnA            0 //PA0 / Button A:
 #define btnB            2 //PA1 / Button B:
@@ -43,6 +44,7 @@ SOFTWARE.
 //---- BUTTONS ----
 
 byte counterA         = 0; //count push btnA:
+byte counterB         = 0; //count push btnB:
 byte counterC         = 0; //count push btnC:
 bool enabled_btnAC    = true;  //Button A + C enabled or not
 bool enabled_btnB     = true;  //Button B enabled or not
@@ -88,8 +90,9 @@ void setup() {
 
   // BUTTONS
   buttonA.attachClick(cycleColors);
-  buttonB.attachLongPressStart(ultraviolet);
-  buttonC.attachLongPressStart(opAmp);
+  buttonB.attachClick(ultraviolet);
+  buttonB.attachLongPressStart(uvForever);
+  buttonC.attachClick(opAmp);
 
   // LEDS
   pinMode(led_B, OUTPUT);
@@ -118,7 +121,9 @@ void loop() {
 
   if ( countDelay == true && ((millis()-oldTime) > 60000)) { //If enabled, turns UV LED off after 1min
     //Turn the UV LED off
-    digitalWrite(uv_LED, LOW);
+    enabled_btnAC = true;
+    digitalWrite(uv_LED, OFF);
+    counterB = 0;
     countDelay = false;
   }
 }
@@ -150,8 +155,8 @@ void showColor() { // 100% of color
 }
 
 void cycleColors() {
-  counterA++;
   if (enabled_btnAC == true) {
+    counterA++;
     switch (counterA) {
       case 1:
         enabled_LED = true;
@@ -194,36 +199,56 @@ void cycleColors() {
 
 void ultraviolet() {
   if (enabled_btnB == true) {
-    blinker(led_B, 500, 5);
-    if ( digitalRead(btnA) == LOW ) {
-      blinker(led_B, 50, 10);
-      enabled_btnB = false;
-      enabled_btnAC = false;
-      countDelay = false;
-      digitalWrite(uv_LED, ON);
-      return;
+    counterB++;
+    switch (counterB) {
+      case 1:
+        blinker(led_B, 500, 5);
+        enabled_LED = false;
+        enabled_btnAC = false;
+        digitalWrite(uv_LED, ON);
+        if ( countDelay == false ) {
+          oldTime    = millis();
+        }
+        countDelay = true; // turn on delay counter in loop()
+        break;
+      case 2:
+        enabled_btnAC = true;
+        digitalWrite(uv_LED, OFF);
+        counterB = 0;
+        break;
     }
-    digitalWrite(uv_LED, ON);
-    if ( countDelay == false ) {
-      oldTime    = millis();
-    }
-    countDelay = true; // turn on delay counter in loop()
   }
+}
+
+void uvForever() {
+  blinker(led_B, 500, 5);
+  blinker(led_B, 50, 10);
+  enabled_btnB = false;
+  enabled_btnAC = false;
+  countDelay = false;
+  digitalWrite(uv_LED, ON);
 }
 
 void opAmp() {
   if (enabled_btnAC == true) {
     counterC++;
-    if (counterC == 1) { //1st press:
-      blinker(led_G, 50, 2);
-      digitalWrite(OPAMP, ON);
-    }
-    if (counterC == 2) { //2nd press:
-      blinker(led_R, 50, 2);
-      digitalWrite(OPAMP, OFF);
-      counterC = 0;
+    switch (counterC) {
+      case 1:
+        blinker(led_G, 50, 2);
+        digitalWrite(OPAMP, ON);
+        break;
+      case 2:
+        blinker(led_R, 50, 2);
+        digitalWrite(OPAMP, OFF);
+        counterC = 0;
+        break;
     }
   }
+}
+
+void disco() {
+  int data = analogRead(ANALOG);
+  
 }
 
 void blinker(byte pin, int len, byte rep) {
