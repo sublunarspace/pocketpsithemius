@@ -26,37 +26,35 @@ SOFTWARE.
 */
 
 #include <OneButton.h>
-#include <fix_fft.h>
 
-#define btnA            0 //PA0 / Button A:
-#define btnB            2 //PA1 / Button B:
-#define btnC            1 //PA2 / Button C:
-#define led_R           4 //PA4 / RED LED
-#define led_G           5 //PA5 / GREEN LED
-#define led_B           6 //PA6 / BLUE LED
-#define uv_LED          3 //PA3 / UV LED
-#define OPAMP           8 //PB2 / turns on the Op Amp circuit
-#define ANALOG          7 //PA7 / Get analog
+#define btnA            0      // PA0 / Button A:
+#define btnB            2      // PA1 / Button B:
+#define btnC            1      // PA2 / Button C:
+#define led_R           4      // PA4 / RED LED
+#define led_G           5      // PA5 / GREEN LED
+#define led_B           6      // PA6 / BLUE LED
+#define uv_LED          3      // PA3 / UV LED
+#define OPAMP           8      // PB2 / turns on the Op Amp circuit
+#define ANALOG          7      // PA7 / Get analog
 
 #define ON              HIGH
 #define OFF             LOW
 
 //---- BUTTONS ----
 
-byte counterA         = 0; //count push btnA:
-byte counterB         = 0; //count push btnB:
-byte counterC         = 0; //count push btnC:
-bool enabled_btnAC    = true;  //Button A + C enabled or not
-bool enabled_btnB     = true;  //Button B enabled or not
+byte counterA         = 0;     // count push btnA:
+byte counterB         = 0;     // count push btnB:
+byte counterC         = 0;     // count push btnC:
+bool enabled_btnAC    = true;  // Button A + C enabled or not
+bool enabled_btnB     = true;  // Button B enabled or not
 
-OneButton buttonA(btnA, true); //Button A setup
-OneButton buttonB(btnB, true); //Button B setup
-OneButton buttonC(btnC, true); //Button C setup
+OneButton buttonA(btnA, true); // Button A setup
+OneButton buttonB(btnB, true); // Button B setup
+OneButton buttonC(btnC, true); // Button C setup
 
 //---- LEDS ----
 
 bool enabled_LED      = false; //turn on a tricolor LED
-bool was_on_LED       = false; //was LED on?
 bool usePWM           = false; //use softPWM for more nuanced colors
 
 //---- TIMER ----
@@ -66,7 +64,7 @@ uint32_t oldTime      = millis();
 
 //---- COLOR ----
 
-struct COLOR { //Creating structure for colors
+struct COLOR { // Creating structure for colors
   byte r;
   byte g;
   byte b;
@@ -75,15 +73,15 @@ COLOR selectedColor   = { 0, 0, 0 };
 
 //---- PLANETARY COLORS ----
 
-COLOR white           = { 255 , 255 , 255 }; //Moon correspondence
-COLOR orange          = { 255 , 128 ,   0 }; //Mercury correspondence
-COLOR green           = {   0 , 255 ,   0 }; //Venus correspondence
-COLOR yellow          = { 255 , 255 ,   0 }; //Sol correspondence
-COLOR red             = { 255 ,   0 ,   0 }; //Mars correspondence
-COLOR blue            = {   0 , 128 , 255 }; //Jupiter correspondence
-COLOR purple          = { 128 ,   0 , 128 }; //Jupiter/Moon correspondence
-COLOR indigo          = { 111 ,   0 , 255 }; //Saturn correspondence
-COLOR grey            = {  40 ,  40 ,  40 }; //Saturn correspondence
+COLOR white           = { 255 , 255 , 255 }; // Moon correspondence
+COLOR orange          = { 255 , 128 ,   0 }; // Mercury correspondence
+COLOR green           = {   0 , 255 ,   0 }; // Venus correspondence
+COLOR yellow          = { 255 , 255 ,   0 }; // Sol correspondence
+COLOR red             = { 255 ,   0 ,   0 }; // Mars correspondence
+COLOR blue            = {   0 , 128 , 255 }; // Jupiter correspondence
+COLOR purple          = { 128 ,   0 , 128 }; // Jupiter/Moon correspondence
+COLOR indigo          = { 111 ,   0 , 255 }; // Saturn correspondence
+COLOR grey            = {  40 ,  40 ,  40 }; // Saturn correspondence
 
 //---- DEVICE SETUP ----
 void setup() {
@@ -105,7 +103,7 @@ void setup() {
   digitalWrite(uv_LED, OFF);
 
   // OP AMP
-  pinMode(ANALOG, INPUT);
+  //pinMode(ANALOG, INPUT);
   pinMode(OPAMP, OUTPUT);
   digitalWrite(OPAMP, OFF);
 
@@ -119,7 +117,8 @@ void loop() {
   buttonC.tick();
   showColor();
 
-  if ( countDelay == true && ((millis()-oldTime) > 60000)) { //If enabled, turns UV LED off after 1min
+  // If enabled, turns UV LED off after 1min
+  if ( countDelay == true && ((millis()-oldTime) > 60000)) {
     //Turn the UV LED off
     enabled_btnAC = true;
     digitalWrite(uv_LED, OFF);
@@ -130,12 +129,14 @@ void loop() {
 
 //---- FUNCTIONS ----
 
+// turn all LEDs off
 void offLeds() {
   analogWrite(led_R, 255);
   analogWrite(led_B, 255);
   analogWrite(led_G, 255);
 }
 
+// set a color
 void setColor(COLOR paint, bool full = true) {
   //tricolor LED color
   selectedColor.r = paint.r;
@@ -144,6 +145,7 @@ void setColor(COLOR paint, bool full = true) {
   showColor();
 }
 
+// show the color or turn off
 void showColor() { // 100% of color
   if (enabled_LED == true) {
       softPWM(led_R, selectedColor.r, 1);
@@ -154,6 +156,7 @@ void showColor() { // 100% of color
   }
 }
 
+// used for button A to cycle through the colors
 void cycleColors() {
   if (enabled_btnAC == true) {
     counterA++;
@@ -197,6 +200,7 @@ void cycleColors() {
   }
 }
 
+// used for button B to toggle the UV LEDs
 void ultraviolet() {
   if (enabled_btnB == true) {
     counterB++;
@@ -220,6 +224,7 @@ void ultraviolet() {
   }
 }
 
+// disable all buttons and keep UV light running forever
 void uvForever() {
   blinker(led_B, 500, 5);
   blinker(led_B, 50, 10);
@@ -229,6 +234,7 @@ void uvForever() {
   digitalWrite(uv_LED, ON);
 }
 
+// used for button C to toggle the OP Amp
 void opAmp() {
   if (enabled_btnAC == true) {
     counterC++;
@@ -246,11 +252,7 @@ void opAmp() {
   }
 }
 
-void disco() {
-  int data = analogRead(ANALOG);
-  
-}
-
+// helper to blink a color
 void blinker(byte pin, int len, byte rep) {
   byte counter = 1;
   while (counter <= rep) {
@@ -262,7 +264,6 @@ void blinker(byte pin, int len, byte rep) {
   }
 }
 
-//---- SOFTWARE PWM ----
 // software PWM function that fakes analog output
 void softPWM(byte pin, byte freq, byte sp) {
   byte delay1 = 255 - freq;
