@@ -36,6 +36,8 @@ SOFTWARE.
 #define uv_LED          3      // PA3 / UV LED
 #define OPAMP           8      // PB2 / turns on the Op Amp circuit
 #define ANALOG          7      // PA7 / Get analog
+#define REG1            9      // PB1 / unconnected
+#define REG2           10      // PB0 / unconnected
 
 #define ON              HIGH
 #define OFF             LOW
@@ -56,6 +58,7 @@ OneButton buttonC(btnC, true); // Button C setup
 
 bool enabled_LED      = false; //turn on a tricolor LED
 bool usePWM           = false; //use softPWM for more nuanced colors
+bool disco            = false; // random colors
 
 //---- TIMER ----
 
@@ -88,6 +91,7 @@ void setup() {
 
   // BUTTONS
   buttonA.attachClick(cycleColors);
+  buttonA.attachLongPressStart(discoStart);
   buttonB.attachClick(ultraviolet);
   buttonB.attachLongPressStart(uvForever);
   buttonC.attachClick(opAmp);
@@ -125,6 +129,18 @@ void loop() {
     counterB = 0;
     countDelay = false;
   }
+
+  if ( disco == true ) {
+    enabled_LED = true;
+    usePWM = false;
+    selectedColor.r = rng();
+    selectedColor.g = rng();
+    selectedColor.b = rng();
+    //digitalWrite(uv_LED, bitRead(rng(), 0));
+    showColor();
+    delay(rng());
+  }
+  
 }
 
 //---- FUNCTIONS ----
@@ -156,8 +172,19 @@ void showColor() { // 100% of color
   }
 }
 
+void discoStart() {
+  if ( disco == true ) {
+    disco = false;
+    enabled_LED = false;
+    //digitalWrite(uv_LED, OFF);
+    counterA = 0;
+  }
+  else disco = true;
+}
+
 // used for button A to cycle through the colors
 void cycleColors() {
+  if ( disco == true) discoStart();
   if (enabled_btnAC == true) {
     counterA++;
     switch (counterA) {
@@ -202,6 +229,8 @@ void cycleColors() {
 
 // used for button B to toggle the UV LEDs
 void ultraviolet() {
+  counterA = 0;
+  if ( disco == true) discoStart();
   if (enabled_btnB == true) {
     counterB++;
     switch (counterB) {
@@ -278,4 +307,21 @@ void softPWM(byte pin, byte freq, byte sp) {
   } else {
     analogWrite(pin, 255 - freq);
   }
+}
+
+byte rng() {
+  int raw0, raw1;
+  byte b0, b1, x, col, twoBytes[2], result;
+  col = 0;
+  while ( col <= 1 ) {
+    raw0 = analogRead(REG1);
+    raw1 = analogRead(REG2);
+    b0 = lowByte(raw0);
+    b1 = lowByte(raw1);
+    x = b0 ^ b1;
+    twoBytes[col] = x;
+    col++;
+  }
+  result = (twoBytes[0]<<4)+twoBytes[1];
+  return result;
 }
