@@ -1,0 +1,12 @@
+(sym_lib_table
+  (lib (name Library)(type Legacy)(uri ${KIPRJMOD}/Library.lib)(options "")(descr ""))
+  (lib (name avr-isp-6-connector)(type Legacy)(uri ${KIPRJMOD}/parts/avr-isp-6-connector.lib)(options "")(descr ""))
+  (lib (name attiny261a-su-mcu_microchip_attiny)(type Legacy)(uri ${KIPRJMOD}/parts/attiny261a-su-mcu_microchip_attiny.lib)(options "")(descr ""))
+  (lib (name sj1-3523n-samacsys_parts)(type Legacy)(uri ${KIPRJMOD}/parts/sj1-3523n-samacsys_parts.lib)(options "")(descr ""))
+  (lib (name tlp222a-2)(type Legacy)(uri ${KIPRJMOD}/parts/tlp222a-2.lib)(options "")(descr ""))
+  (lib (name 3352t-1-103lf)(type Legacy)(uri ${KIPRJMOD}/parts/3352t-1-103lf.lib)(options "")(descr ""))
+  (lib (name lm386)(type Legacy)(uri ${KIPRJMOD}/parts/lm386.lib)(options "")(descr ""))
+  (lib (name js202011aqn)(type Legacy)(uri ${KIPRJMOD}/parts/js202011aqn.lib)(options "")(descr ""))
+  (lib (name pj-051ah)(type Legacy)(uri ${KIPRJMOD}/parts/pj-051ah.lib)(options "")(descr ""))
+  (lib (name tlp4227gf)(type Legacy)(uri ${KIPRJMOD}/parts/tlp4227gf.lib)(options "")(descr ""))
+)

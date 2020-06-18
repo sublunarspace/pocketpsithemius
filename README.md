@@ -1,28 +1,17 @@
-# pocketpsithemius
+# Pocket Psithemius
 
 Firmware for the Pocket Psithemius device.
 
 ## About the Pocket Psithemius
 
-The "Pocket Psithemius" is a so-called "Table of Practice", a tool for spirit communication and manifestation. Its design is based on instructions found in an early 19th century book on ceremonial magic called "The Magus" by Francis Barrett. 
+The Psithemius is a psionic device for spirit conjuration and magical manifestation.
 
-Written in 1801 in the middle of the 'Age of Reason', sandwiched between Newton and Darwin, this work embodies deep knowledge of Alchemy, Astrology, and the Kabbalah. The heavily plagiarized book features a treatise called "The Art of Drawing Spirits Into Crystals" that is attributed to the late Renaissance abbott and magician Johannes Trithemius von Spanheim, who famously invented a system of cryptography named "steganography." 
+Its basic architecture consists of printed circuit boards hosting concentric circles with magical names and symbols and a triangle with a spiral shaped transmitter in its center. The design is based on a system attributed to the German abbot and polymath Johannes Trithemius who lived around the end of the 15th century and developed methods for communing with transdimensional entities.
 
-Part of the instruction for building a set of tools that will allow the operator to conjure and communicate with spirits, is a circular "Table of Practice" that features a "Triangle of Manifestation". The Psithemius uses a simplified design and electronic improvements from the 20th century fringe science of "radionics" to establish and amplify a communication link between the operator and discarnate entities and for manifesting magical will. The device does not work by itself without proper ritual framework.
+For the Psithemius device to work properly, a quartz crystal is needed. The device emits light and an electromagnetic field around and into this quartz crystal set in the center of the triangle that acts as a focal point and spirit medium.
 
-## Installation
+The Psithemius device utilizes principles from Psionics to detect and electrically amplify intent in the form of magical sigils or radionic rates sent to it. The goal is to charge the crystal with energies resonating with the nature of an entity and act as a beacon of condensed intent to attract them to the ritual space.
 
-* Set up an Arduino as ISP programmer following [this tutorial](https://www.arduino.cc/en/Tutorial/ArduinoISP) or use any other ICSP compatible programmer.
-* The firmware depends on the [OneButton library](https://github.com/mathertel/OneButton) which you need to install with the IDE's Library Manager
-* Connect the Pocket Psithemius via ICSP to the programmer.
-
-### IDE Tools Settings
-
-* Board: Attiny24/44/84
-* Chip: Attiny84
-* Clock: 8MHz (internal)
-* B.O.D. Level: B.O.D. Disabled
-* Save EEPROM: EEPROM retained
-* Pin Mapping: clockwise
-* LTO: Enabled
-* millis()/micros(): Enabled
+[Operator Manual](MANUAL.md)
+[Arduino IDE Firmware](firmware/README.md)
+[KiCAD Files](hardware/)
