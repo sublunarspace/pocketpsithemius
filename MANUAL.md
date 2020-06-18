@@ -44,9 +44,9 @@ For magical operations it is advised to sit in front of the Psithemius facing Ea
 
 ## Power
 
-Your Pocket Psithemius comes with a 0.5m long USB-A to 5.5 mm/2.1 mm 5V DC Barrel Jack power cable. Plug the Barrel connector end of the cable into the Barrel socket at the rear end of the device and plug the USB-A end into a USB socket or 5V DC USB Power Adapter such as the one that came with your mobile phone. Alternatively you may also plug it into any portable USB Power Bank battery pack.
+Your Pocket Psithemius comes with a 0.5m long USB-A to 5.5 mm/2.1 mm 5V DC Barrel Jack power cable. Plug the Barrel connector end of the cable into the Barrel socket at the rear of the device and connect the USB-A plug into a USB socket or 5V DC USB Power Adapter such as the one that came with your mobile phone. Alternatively you may also plug it into any portable USB Power Bank battery pack.
 
-Power the device on by pulling the tiny switch at the rear lefthand side right next to the Barrel connector to the left.
+Power the device on by flicking the tiny ON/OFF switch to the left. It is located at the rear lefthand side next to the power connector.
 
 ## Button Functions
 
