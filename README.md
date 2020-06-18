@@ -1,8 +1,6 @@
 # Pocket Psithemius
 
-Firmware for the Pocket Psithemius device.
-
-## About the Pocket Psithemius
+![Psithemius](images/pointy.jpg)
 
 The Psithemius is a psionic device for spirit conjuration and magical manifestation.
 
@@ -13,5 +11,7 @@ For the Psithemius device to work properly, a quartz crystal is needed. The devi
 The Psithemius device utilizes principles from Psionics to detect and electrically amplify intent in the form of magical sigils or radionic rates sent to it. The goal is to charge the crystal with energies resonating with the nature of an entity and act as a beacon of condensed intent to attract them to the ritual space.
 
 [Operator Manual](MANUAL.md)
+
 [Arduino IDE Firmware](firmware/README.md)
+
 [KiCAD Files](hardware/)

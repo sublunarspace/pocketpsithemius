@@ -1,5 +1,32 @@
 # Pocket Psithemius Operator Manual
 
+- [Pocket Psithemius Operator Manual](#pocket-psithemius-operator-manual)
+  * [Caution](#caution)
+  * [Setup](#setup)
+  * [Power](#power)
+  * [Button Functions](#button-functions)
+    + [Button A](#button-a)
+    + [Button B](#button-b)
+    + [Button C](#button-c)
+  * [Modes of Operation](#modes-of-operation)
+    + [Primary Modes](#primary-modes)
+    + [Secondary Modes](#secondary-modes)
+  * [Detailed Primary Operations](#detailed-primary-operations)
+    + [I. Trithemian Table of Practice](#i-trithemian-table-of-practice)
+    + [II. Crystal Programming](#ii-crystal-programming)
+      - [1. Clearing the Crystal](#1-clearing-the-crystal)
+      - [2. Programming the Crystal](#2-programming-the-crystal)
+      - [3a. Audio Frequency Priming](#3a-audio-frequency-priming)
+      - [3b. Signal Generator Priming](#3b-signal-generator-priming)
+      - [3c. Psionic Priming](#3c-psionic-priming)
+      - [3d. Seal Imprinting](#3d-seal-imprinting)
+      - [4. Ritual Recommendations](#4-ritual-recommendations)
+  * [Detailed Secondary Operations](#detailed-secondary-operations)
+    + [I. Frequency Resonator](#i-frequency-resonator)
+    + [II. Amplified Radionic Transmitter](#ii-amplified-radionic-transmitter)
+    + [III. Fluid Condenser Mirror Primer](#iii-fluid-condenser-mirror-primer)
+    + [IV. Wishing Machine / Sigil Activator](#iv-wishing-machine---sigil-activator)
+
 ## Caution
 
 * The device has three built in 385nm UV-A LEDs that are quite intense (120mW) and can be harmful to eyes and skin.
@@ -49,19 +76,18 @@ The device has three buttons: A on the left side of the triangle, B on the right
 
 ### Primary Modes
 
-The Psithemius has been designed to provide functionality for different modes of operation. Its main function is to serve as a so-called "table of practice" with a "triangle of manifestation" for conjurations following the established protocol of such practice laid out in the so-called "Trithemian" tradition of "drawing spirits into crystals".
+The Psithemius has been designed to provide functionality for different modes of operation. Its main function is to serve as a so-called [Trithemian Table of Practice](#i-trithemian-table-of-practice) with a "triangle of manifestation" for conjurations following the established protocol of such practice laid out in the so-called "Trithemian" tradition of "drawing spirits into crystals".
 
-In addition the device incorporates electronic functions to improve this mode of use by enabling the operator to clear a quartz crystal before and after such operation and to prime it with colors and resonance according to classic planetary correspondences.
+In addition the device incorporates electronic functions to improve this mode of use by enabling the operator to clear a quartz crystal before and after such operation and to [prime it with colors and resonance](#ii-crystal-programming) according to classic planetary correspondences.
 
 ### Secondary Modes
 
 Due to the combination of functions built into the Psithemius it also allows for additional use cases:
 
-* amplified transmitter of radionic signals
-* a "wishing machine"
-* sigil activator
-* primer for psychurgic fluid condenser scrying mirrors
-* frequency resonator
+* [Frequency Resonator](#i-frequency-resonator)
+* [Amplified Radionic Transmitter](#ii-amplified-radionic-transmitter)
+* [Fluid Condenser Mirror Primer](#iii-fluid-condenser-mirror-primer)
+* [Wishing Machine / Sigil Activator](#iv-wishing-machine---sigil-activator)
 
 ## Detailed Primary Operations
 
@@ -81,7 +107,7 @@ A precise descriptio of its design elements have been given by Frater Rufus Opus
 
 >The Table of Practice is a symbol of the cosmos. [...] The outermost circle represents the Seven Heavens and the Intelligences therein. They are the governors of the spheres, and their presence helps ensure you get the spirit you’re looking for when you perform your conjuration. The Elemental Kings provide the gate to the material realm, so the spirits can influence your life materially, if necessary, but they also make sure that any spirit you call up of a terrestrial nature won’t go ballistic and eat your soul, leaving you dead by dawn. These two circles together represent the meeting of the Heavens and the Earth in your temple space. [...] Taken altogether, the Table of Practice represents our relationship with the Seven Governors, the Four Elemental Kings, and the Process of Manifestation. It is designed to provide the place where a spirit can manifest, and to give us a shared space between the Heavens and the Earth in which we can work together to accomplish the things we have to do.
 
-The Psithemius is a mere tool to be used in a ritual context of the pracice discussed here. A detailed manual for this system of conjuration exceeds the purpose of this manual by far. If you want to learn more on the subject, please consult Frater Rufus Opus book "Seven Spheres" or dive into Polyphanes' extensive treatment of the subject in his free ebook.
+The Psithemius is a mere tool to be used in a ritual context of the pracice discussed here. A detailed manual for this system of conjuration exceeds the purpose of this manual by far. If you want to learn more on the subject, please consult [Frater Rufus Opus book "Seven Spheres"](https://www.goodreads.com/book/show/23644473-seven-spheres) or dive into Polyphanes' extensive treatment of the subject in his [free ebook](http://digitalambler.files.wordpress.com/2019/10/trithemius.pdf).
 
 ### II. Crystal Programming
 
