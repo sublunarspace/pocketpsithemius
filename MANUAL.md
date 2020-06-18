@@ -155,7 +155,7 @@ The Psithemius offers an innovative new way of enhancing this method by priming 
 * grey (Saturn)
 * off (Saturn)
 
-#### 3a. Audio Frequency Imprinti
+#### 3a. Audio Frequency Imprint
 
 1. Plug an audio frequency generator (e.g. your Android phone running the app "Signal Generator") into the 3.5mm 1/8" mini jack at the rear end of the Psithemius using a male to male 3.5mm 1/8" mini jack cable. Select a frequency that corresponds with the planetary energy of your planned operation.
 
@@ -165,13 +165,13 @@ The Psithemius offers an innovative new way of enhancing this method by priming 
 
 4. Place the crystal back into the center of the triangle and immerse it with the selected light and frequencies.
 
-#### 3b. Signal Generator Imprinti
+#### 3b. Signal Generator Imprint
 
 1. Plug a frequency generator such as the Spooky2, PicBerry, FG085 into the 3.5mm 1/8" mini jack at the rear end of the Psithemius using a BNC to male 3.5mm 1/8" mini jack adapter cable. Since signal generators usually output a voltage up to 20V, no amplification is needed. DO NOT TURN THE INTERNAL AMPLIFICATION ON.
 
 2. Place the crystal back into the center of the triangle and immerse it with the selected light and frequencies.
 
-#### 3c. Psionic Imprinti
+#### 3c. Psionic Imprint
 
 1. Instead of a frequency signal, you may also plug any psionic or radionic device into the into the 3.5mm 1/8" mini jack at the rear end of the Psithemius using a proper adapter cable.
 
