@@ -254,7 +254,7 @@ If something in the ritual goes awry you may press button B at any time as a "ki
 
 ### III. Fluid Condenser Mirror Charger
 
-If you have a Psychurgical Mirror consisting of fluid condenser material, such as the one invented by Lukáš Loužecký and distributed by Czech Hermetics, you are aware that they need to be charged with either sunlight for 5 minutes or ultraviolet light for around an hour prior to a scrying operation. The Psithemius has a special function to achieve that:
+If you have a Psychurgical Mirror consisting of fluid condenser material, such as the one invented by Lukáš Loužecký and [distributed by Czech Hermetics](http://czechhermetics.com/the-almost-forgotten-art-of-psychurgical-mirrors/), you are aware that they need to be charged with either sunlight for 5 minutes or ultraviolet light for around an hour prior to a scrying operation. The Psithemius has a special function to achieve that:
 
 1. Press and hold button B for more than a second and trigger the countdown for activating the UV-LEDs.
 
