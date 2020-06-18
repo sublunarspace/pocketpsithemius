@@ -16,15 +16,15 @@
     + [II. Crystal Programming](#ii-crystal-programming)
       - [1. Clearing the Crystal](#1-clearing-the-crystal)
       - [2. Programming the Crystal](#2-programming-the-crystal)
-      - [3a. Audio Frequency Priming](#3a-audio-frequency-priming)
-      - [3b. Signal Generator Priming](#3b-signal-generator-priming)
-      - [3c. Psionic Priming](#3c-psionic-priming)
-      - [3d. Seal Imprinting](#3d-seal-imprinting)
+      - [3a. Audio Frequency Imprint](#3a-audio-frequency-imprint)
+      - [3b. Signal Generator Imprint](#3b-signal-generator-imprint)
+      - [3c. Psionic Imprint](#3c-psionic-imprint)
+      - [3d. Seal Imprint](#3d-seal-imprint)
       - [4. Ritual Recommendations](#4-ritual-recommendations)
   * [Detailed Secondary Operations](#detailed-secondary-operations)
     + [I. Frequency Resonator](#i-frequency-resonator)
     + [II. Amplified Radionic Transmitter](#ii-amplified-radionic-transmitter)
-    + [III. Fluid Condenser Mirror Primer](#iii-fluid-condenser-mirror-primer)
+    + [III. Fluid Condenser Mirror Charger](#iii-fluid-condenser-mirror-charger)
     + [IV. Wishing Machine / Sigil Activator](#iv-wishing-machine---sigil-activator)
 
 ## Caution
@@ -88,7 +88,7 @@ Due to the combination of functions built into the Psithemius it also allows for
 
 * [Frequency Resonator](#i-frequency-resonator)
 * [Amplified Radionic Transmitter](#ii-amplified-radionic-transmitter)
-* [Fluid Condenser Mirror Primer](#iii-fluid-condenser-mirror-primer)
+* [Fluid Condenser Mirror Charger](#iii-fluid-condenser-mirror-charger)
 * [Wishing Machine / Sigil Activator](#iv-wishing-machine---sigil-activator)
 
 ## Detailed Primary Operations
@@ -155,7 +155,7 @@ The Psithemius offers an innovative new way of enhancing this method by priming 
 * grey (Saturn)
 * off (Saturn)
 
-#### 3a. Audio Frequency Priming
+#### 3a. Audio Frequency Imprinti
 
 1. Plug an audio frequency generator (e.g. your Android phone running the app "Signal Generator") into the 3.5mm 1/8" mini jack at the rear end of the Psithemius using a male to male 3.5mm 1/8" mini jack cable. Select a frequency that corresponds with the planetary energy of your planned operation.
 
@@ -165,13 +165,13 @@ The Psithemius offers an innovative new way of enhancing this method by priming 
 
 4. Place the crystal back into the center of the triangle and immerse it with the selected light and frequencies.
 
-#### 3b. Signal Generator Priming
+#### 3b. Signal Generator Imprinti
 
 1. Plug a frequency generator such as the Spooky2, PicBerry, FG085 into the 3.5mm 1/8" mini jack at the rear end of the Psithemius using a BNC to male 3.5mm 1/8" mini jack adapter cable. Since signal generators usually output a voltage up to 20V, no amplification is needed. DO NOT TURN THE INTERNAL AMPLIFICATION ON.
 
 2. Place the crystal back into the center of the triangle and immerse it with the selected light and frequencies.
 
-#### 3c. Psionic Priming
+#### 3c. Psionic Imprinti
 
 1. Instead of a frequency signal, you may also plug any psionic or radionic device into the into the 3.5mm 1/8" mini jack at the rear end of the Psithemius using a proper adapter cable.
 
@@ -181,7 +181,7 @@ The Psithemius offers an innovative new way of enhancing this method by priming 
 
 4. Place the crystal back into the center of the triangle and immerse it with the selected light and psionic information.
 
-#### 3d. Seal Imprinting
+#### 3d. Seal Imprint
 
 1. If you have the Sublunar Psionics Ingress Plate with Universal Lamen cover disk, you can also imprint the crystal with the focused energies of the entity to be conjured.
 
@@ -252,7 +252,7 @@ If something in the ritual goes awry you may press button B at any time as a "ki
 5. Use the thumb wheel at the front left of the device to adjust the amplification gain. Turn it to the left (clockwise) for a lesser (down to 20fold) amplification of the signal. Or turn it to the right (counterclockwise) for a stronger (up to 200fold).
 6. Any rate dialed into the connected psionic or radionic device will transmit into the aether amplified by the Psithemius.
 
-### III. Fluid Condenser Mirror Primer
+### III. Fluid Condenser Mirror Charger
 
 If you have a Psychurgical Mirror consisting of fluid condenser material, such as the one invented by Lukáš Loužecký and distributed by Czech Hermetics, you are aware that they need to be charged with either sunlight for 5 minutes or ultraviolet light for around an hour prior to a scrying operation. The Psithemius has a special function to achieve that:
 
