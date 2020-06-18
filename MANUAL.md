@@ -34,11 +34,13 @@
 * Do Not look directly into UV light. This can be harmful to the human body especially to the eyes and skin, even for brief period due to the intense UV light.
 * If viewing the UV light is necessary, please use UV filtered glasses to avoid damage by the UV light.
 * Avoid direct eye and skin exposure to the UV light.
-* KEEP CHILDREN OUT OF REACH.
+* *KEEP CHILDREN OUT OF REACH*.
 
 ## Setup
 
 Place the Psithemius in front of you with the word OPIENC and the small hexagram or "star of David" symbol ✡ in the triangle pointing away from you.
+
+For magical operations it is advised to sit in front of the Psithemius facing East. For radionic operations it is advised to face North instead.
 
 ## Power
 
@@ -99,7 +101,7 @@ The circular "table" features two concentric circles with magical names and char
 
 The outer ring features the names of the seven planetary archangels Michael (Sun), Haniel (Venus), Raphael (Mercury), Gabriel (Moon), Qaphziel (Saturn), Sachiel (Jupiter), and Samael (Mars). The names are written in their original Hebrew spelling set in a magical typeface called "Celestial script" found in Heinrich Cornelius Agrippa von Nettesheim's "Third Book of Occult Philosophy". Assuming the rear end of the device resembles the Eastern cardinal direction they are ordered around the circle following a logic of planetary correspondences.
 
-The inner ring features the names of the four Elemental or Cardinal Kings Oriens (East), Paimon (West), Ariton (North), Amaimon (South), again according to their directions assuming the rear end of the device points East.
+The inner ring features the names of the four Elemental or Cardinal Kings Oriens (East), Paimon (West), Ariton (North), Amaimon (South), again according to their directions assuming the rear end of the device points East. For any kind of operation, position the Psithemius in a way that the Cardinal Kings names point into the correct cardinal directions.
 
 In the center of the circles is a so-called "triangle of manifestation".
 
@@ -132,7 +134,7 @@ The Psithemius offers an innovative new way of enhancing this method by priming 
 * Do Not look directly into UV light. This can be harmful to the human body especially to the eyes and skin, even for brief period due to the intense UV light.
 * If viewing the UV light is necessary, please use UV filtered glasses to avoid damage by the UV light.
 * Avoid direct eye and skin exposure to the UV light.
-* KEEP CHILDREN OUT OF REACH.
+* *KEEP CHILDREN OUT OF REACH*.
 
 5. After 60 seconds the UV-LEDs turn off and it is safe for you to operate the device again. The crystal should be cleared now.
 
@@ -214,7 +216,7 @@ If something in the ritual goes awry you may press button B at any time as a "ki
 * Do Not look directly into UV light. This can be harmful to the human body especially to the eyes and skin, even for brief period due to the intense UV light.
 * If viewing the UV light is necessary, please use UV filtered glasses to avoid damage by the UV light.
 * Avoid direct eye and skin exposure to the UV light.
-* KEEP CHILDREN OUT OF REACH.
+* *KEEP CHILDREN OUT OF REACH*.
 
 ## Detailed Secondary Operations
 
@@ -241,7 +243,7 @@ If something in the ritual goes awry you may press button B at any time as a "ki
 * Do Not look directly into UV light. This can be harmful to the human body especially to the eyes and skin, even for brief period due to the intense UV light.
 * If viewing the UV light is necessary, please use UV filtered glasses to avoid damage by the UV light.
 * Avoid direct eye and skin exposure to the UV light.
-* KEEP CHILDREN OUT OF REACH.
+* *KEEP CHILDREN OUT OF REACH*.
 
 3. If the connected psionic or radionic device is not grounded to earth, it is recommended to connect a wire to the M2.5 tap hole earth connector located in the middle between the Barrel jack and 3.5mm 1/8" at the rear end of the Psithemius. The other end of the wire should be physically connected to the earth, either by using a wire and a pole or by connecting it to the pipe of a radiator.
 
@@ -267,7 +269,7 @@ If you have a Psychurgical Mirror consisting of fluid condenser material, such a
 * Do Not look directly into UV light. This can be harmful to the human body especially to the eyes and skin, even for brief period due to the intense UV light.
 * If viewing the UV light is necessary, please use UV filtered glasses to avoid damage by the UV light.
 * Avoid direct eye and skin exposure to the UV light.
-* KEEP CHILDREN OUT OF REACH.
+* *KEEP CHILDREN OUT OF REACH*.
 
 4. Let the Psithemius radiate UV-light through the fluid condenser for a desired period of time, then turn the Psithemius off using its main power switch at the rear left of the device while avoiding looking into the ultraviolet light
 
@@ -286,7 +288,7 @@ If you have a Psychurgical Mirror consisting of fluid condenser material, such a
 * Do Not look directly into UV light. This can be harmful to the human body especially to the eyes and skin, even for brief period due to the intense UV light.
 * If viewing the UV light is necessary, please use UV filtered glasses to avoid damage by the UV light.
 * Avoid direct eye and skin exposure to the UV light.
-* KEEP CHILDREN OUT OF REACH.
+* *KEEP CHILDREN OUT OF REACH*.
 
 3. If your goal(s) correspond with a planetary energy, feel free to choose an appropriate color using momentary presses of button A
 
