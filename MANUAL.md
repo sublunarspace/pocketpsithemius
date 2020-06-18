@@ -250,6 +250,7 @@ If something in the ritual goes awry you may press button B at any time as a "ki
 4. Press button C to activate the internal amplification circuit. The amplified psionic signal is radiating out of the clockwise spiral in the center of the triangle. 
 
 5. Use the thumb wheel at the front left of the device to adjust the amplification gain. Turn it to the left (clockwise) for a lesser (down to 20fold) amplification of the signal. Or turn it to the right (counterclockwise) for a stronger (up to 200fold).
+
 6. Any rate dialed into the connected psionic or radionic device will transmit into the aether amplified by the Psithemius.
 
 ### III. Fluid Condenser Mirror Charger
@@ -303,5 +304,3 @@ If you have a Psychurgical Mirror consisting of fluid condenser material, such a
 8. Press button C to activate the internal amplification circuit. The psionic signal coming from the Ingress Plate is turned into an electromagnetic field radiating out of the clockwise spiral in the center of the triangle. 
 
 9. Use the thumb wheel at the front left of the device to adjust the amplification gain. Turn it to the left (clockwise) for a lesser (down to 20fold) amplification of the signal. Or turn it to the right (counterclockwise) for a stronger (up to 200fold).
-
-10. Place the crystal back into the center of the triangle and immerse it with the selected light and psionic imprint of the seal.
