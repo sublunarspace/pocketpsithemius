@@ -99,7 +99,7 @@ Unpowered, the Psithemius can be used as a portable classic Trithemian table of 
 
 The circular "table" features two concentric circles with magical names and characters: 
 
-The outer ring features the names of the seven planetary archangels Michael (Sun), Haniel (Venus), Raphael (Mercury), Gabriel (Moon), Qaphziel (Saturn), Sachiel (Jupiter), and Samael (Mars). The names are written in their original Hebrew spelling set in a magical typeface called "Celestial script" found in Heinrich Cornelius Agrippa von Nettesheim's "Third Book of Occult Philosophy". Assuming the rear end of the device resembles the Eastern cardinal direction they are ordered around the circle following a logic of planetary correspondences.
+The outer ring features the names of the seven planetary archangels Michael (Sun), Haniel (Venus), Raphael (Mercury), Gabriel (Moon), Qaphziel (Saturn), Sachiel (Jupiter), and Samael (Mars). The names are written in their original Hebrew spelling set in a magical typeface called "Celestial script" found in Heinrich Cornelius Agrippa von Nettesheim's "Third Book of Occult Philosophy". Assuming the rear end of the device resembles the Eastern cardinal direction they are placed around the circle in the classic "Chaldean" order from Saturn to the Moon and aligning the sun towards the East.
 
 The inner ring features the names of the four Elemental or Cardinal Kings Oriens (East), Paimon (West), Ariton (North), Amaimon (South), again according to their directions assuming the rear end of the device points East. For any kind of operation, position the Psithemius in a way that the Cardinal Kings names point into the correct cardinal directions.
 
