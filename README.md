@@ -14,7 +14,9 @@ The Psithemius device utilizes principles from Psionics to detect and electrical
 
 [Assembly Instructions](hardware/ASSEMBLY.md)
 
-[BOM List of Components](hardware/BOM.csv)
+[BOM List of Components](hardware/BOM.csv) [PDF](hardware/BOM.pdf)
+
+[Component Images](hardware/parts_preview.pdf)
 
 [Arduino IDE Firmware](firmware/)
 
