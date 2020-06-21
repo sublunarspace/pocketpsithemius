@@ -1,0 +1,33 @@
+Reference,Quantity,Value,Description,Datasheet,Manufacturer,Part Number,Digikey Number,Mouser Number
+,,,,,,,,
+C1,1,1uF,Capacitor,http://www.vishay.com/docs/45171/kseries.pdf,Vishay,K105Z20Y5VF5TH5,BC1168CT-ND,594-K105Z20Y5VF5TH5
+"C2, C5, C10",2,0.1uF,Capacitor,http://www.vishay.com/docs/45171/kseries.pdf,Vishay,K104K15X7RF5TH5,BC1101CT-ND,594-K104K15X7RF5TH5
+C3,1,0.1uF/35V,Pol. Capacitor,https://www.nichicon.co.jp/english/products/pdfs/e-uma.pdf,Nishicon,UMA1H0R1MCD2TP,493-10420-3-ND,N/A
+C4,1,10uF/10V,Pol. Capacitor,http://nichicon-us.com/english/products/pdfs/e-usv.pdf,Vishay,USV1C100MFD,493-16020-ND,647-USV1C100MFD1TE647-USV1C100MFD1TE
+"C6, C11",2,220uF/16V,Pol. Capacitor,http://nichicon-us.com/english/products/pdfs/e-usa_usr.pdf,Nishicon,USR1C221MDD,493-15996-ND,647-USR1C221MDD
+D1,1,LED_RGBA,RGB LED,https://katalog.we-online.de/led/datasheet/156125M173000.pdf,Würth Elektronik,156125M173000,732-11426-1-ND,710-156125M173000
+"D2, D3, D4",3,UV,UV LED,http://static.vcclite.com/pdf/VAOL-5GUV8T4-LED-5mm-UV.pdf,Nichia,VAOL-5GUV8T4,VAOL-5GUV8T4-ND,593-VAOL5GUV8T4
+"H1, H2, H3, H4",4,M2.5/9mm,Distance Bolt,https://katalog.we-online.de/em/datasheet/960xxxxxx.pdf,Würth Elektronik,960090021,732-12693-ND,N/A
+"H1, H2, H3, H4",4,M2.5/7mm,Distance Bolt,https://katalog.we-online.de/em/datasheet/960xxxxxx.pdf,Würth Elektronik,960070021,732-12683-ND,N/A
+"H1, H2, H3, H4",4,M2.5/25mm,Screw,N/A,N/A,10.9-7380-M2.5x20,N/A,N/A
+"H1, H2, H3, H4",4,M2.5,Washer,N/A,N/A,ST-M2.5-125,N/A,N/A
+"H1, H2, H3, H4",4,M2.5,Nut,N/A,N/A,ST-M2.5-934,N/A,N/A
+J1,1,3.5mm,Audio Mini Jack,https://www.cuidevices.com/product/resource/digikeypdf/sj1-352xn.pdf,CUI Devices,SJ1-3523N,CP1-3523N-ND,490-SJ1-3523N
+J2,1,PJ-051AH,Barrel Jack,https://www.cuidevices.com/product/resource/pj-051ah.pdf,CUI Devices,PJ-051AH,CP-051AH-ND,490-PJ-051AH
+J3,1,7761,M2.5 / Earth,http://keyelco.com/userAssets/file/M65p69.pdf,Keystone Electronics,7761,36-7761-ND,534-7761
+J4,1,AVR-ISP-6,Flat Cable Socket,https://katalog.we-online.de/em/datasheet/6120xx21721.pdf,Würth Elektronik,61200621721,732-5404-ND,710-61200621721
+J5,1,BAT,Battery Socket,http://www.jst-mfg.com/product/pdf/eng/ePH.pdf,JST,S4B-PH-K-S(LF)(SN),455-1721-ND,N/A
+"R1, R2, R3, R4, R7",5,10K,Resistor,https://www.seielect.com/catalog/sei-cf_cfm.pdf,Stackpole Electronics,CF18JT10K0,CF18JT10K0CT-ND,N/A
+R5,1,10,Resistor,https://www.seielect.com/catalog/sei-cf_cfm.pdf,Stackpole Electronics,CF18JT10R0,CF18JT10R0CT-ND,N/A
+"R6, R11, R15",3,180,Resistor,https://www.seielect.com/catalog/sei-cf_cfm.pdf,Stackpole Electronics,CF18JT180R,CF18JT180RCT-ND,N/A
+"R8, R9, R10",3,680,Resistor,https://www.seielect.com/catalog/sei-cf_cfm.pdf,Stackpole Electronics,CF18JT680R,CF18JT680RCT-ND,N/A
+"R12, R13, R14",3,330,Resistor,https://www.seielect.com/catalog/sei-cf_cfm.pdf,Stackpole Electronics,CF18JT330R,CF18JT330RCT-ND,N/A
+R16,1,4,Resistor,https://www.seielect.com/catalog/sei-cf_cfm.pdf,Stackpole Electronics,WW1AFT4R00,WW1AFT4R00-ND,N/A
+"SW1, SW2, SW3",3,B3F-4050,Switch,https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf,Omron,B3F-4050,SW413-ND,653-B3F-4050
+"SW1, SW2, SW3",3,,Switch Cap,https://omronfs.omron.com/en_US/ecb/products/pdf/en-b32.pdf,Omron,B32-1610 ,SW847-ND,653-B32-1610
+SW4,1,JS202011AQN,Switch,https://www.ckswitches.com/media/1422/js.pdf,C & K,JS202011AQN,401-2000-ND,611-JS202011AQN
+U1,1,ATtiny84A-PU,Microcontroller,http://ww1.microchip.com/downloads/en/DeviceDoc/doc8183.pdf,Microchip Technology,ATTINY84-20PU,ATTINY84-20PU-ND,556-ATTINY84-20PU
+U2,1,TLP222A,Optical Relay,https://toshiba.semicon-storage.com/info/docget.jsp?did=17036&prodName=TLP222A,Toshiba,TLP222A-2(F),TLP222A-2F-ND,757-TLP222A-2(F)
+U3,1,TLP4227GF,Optical Relay,http://toshiba.semicon-storage.com/info/docget.jsp?did=17079&prodName=TLP4227G-2,Toshiba,TLP4227GF,TLP4227GF-ND,757-TLP4227G(F)
+U4,1,LM386,Op-Amp,http://www.ti.com/lit/ds/symlink/lm386.pdf,Texas Instruments,LM386MX-1/NOPB,296-44414-5-ND,926-LM386MX-1/NOPB
+VR1,1,3352T-1-103LF,Var. Resistor,https://www.bourns.com/docs/Product-Datasheets/3352.pdf,Bourns,3352T-1-103LF,3352T-103LF-ND,652-3352T-1-103LF
