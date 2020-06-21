@@ -12,7 +12,7 @@ The Psithemius device utilizes principles from Psionics to detect and electrical
 
 ## Get the Psithemius
 
-You can purchase a Pocket Psithemius directly from Sublunar Psionics. It comes in three different versions. All versions come with a USB power cable and a small carry bag.
+You can [purchase a Pocket Psithemius directly from Sublunar Psionics](mailto:info@sublunar.space). It comes in three different versions. All versions come with a USB power cable and a small carry bag.
 
 * Fully assembled device (EUR 99.00)
 * DIY kit incl. PCBs and all components (EUR 69.00)
