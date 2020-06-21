@@ -1,3 +1,16 @@
+- [Assembling the DIY Psithemius](#assembling-the-diy-psithemius)
+  * [1. Resistors](#1-resistors)
+  * [2. Unpolarized Capacitors](#2-unpolarized-capacitors)
+  * [3. Integrated Circuit Chips](#3-integrated-circuit-chips)
+  * [4. Power Switch & Special Resistors](#4-power-switch---special-resistors)
+  * [5. Rear Connectors](#5-rear-connectors)
+  * [6. Polarized Capacitors](#6-polarized-capacitors)
+  * [7. UV LEDs](#7-uv-leds)
+  * [8. Buttons & Extra Connectors](#8-buttons---extra-connectors)
+  * [9. Mechanical Assembly](#9-mechanical-assembly)
+  * [10. Finalizing](#10-finalizing)
+- [Troubleshooting](#troubleshooting)
+
 # Assembling the DIY Psithemius
 
 I usually start with the lowest profile components and work up to the highest. This guide follows my order of assembly.
@@ -16,7 +29,7 @@ Identify the carbon film resistors using the color coding and stick them through
 
 Stick them in from the top of the PCB, turn the PCB around and lay it flat on a table. Solder the resistor leads to the through-holes and clip the excess off.
 
-R16 is a large wirewound resistor. Do that one at the end of the assembly.
+R16 is a large wirewound resistor. Do that one at [Step 4](#4-power-switch---special-resistors).
 
 ## 2. Unpolarized Capacitors
 
