@@ -558,13 +558,13 @@ P 8100 2125
 F 0 "C6" V 8320 2125 50  0000 C CNN
 F 1 "220uF/16V" V 8244 2125 30  0000 C CNN
 F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 8100 2125 50  0001 C CNN
-F 3 "https://www.nichicon.co.jp/english/products/pdfs/e-uvr.pdf" H 8100 2125 50  0001 C CNN
-F 4 "493-6096-1-ND" H 8100 2125 50  0001 C CNN "Digi-Key"
-F 5 "Würth Elektronik" H 8100 2125 50  0001 C CNN "Manufacturer"
-F 6 "UVR1C221MED1TA" H 8100 2125 50  0001 C CNN "Part Number"
+F 3 "http://nichicon-us.com/english/products/pdfs/e-usa_usr.pdf" H 8100 2125 50  0001 C CNN
+F 4 "493-15996-ND" H 8100 2125 50  0001 C CNN "Digi-Key"
+F 5 "Nichicon" H 8100 2125 50  0001 C CNN "Manufacturer"
+F 6 "USR1C221MDD" H 8100 2125 50  0001 C CNN "Part Number"
 F 7 "https://www.digikey.com/product-detail/en/nichicon/UVR1C221MED1TA/493-6096-1-ND/3438470" V 8100 2125 50  0001 C CNN "Digi-Key/http"
-F 8 "647-UVR1C221MED1TA" H 8100 2125 50  0001 C CNN "Mouser Part Number"
-F 9 "https://www2.mouser.com/ProductDetail/Nichicon/UVR1C221MED1TA" H 8100 2125 50  0001 C CNN "Mouser/http"
+F 8 "647-USR1C221MDD" H 8100 2125 50  0001 C CNN "Mouser Part Number"
+F 9 "https://www2.mouser.com/ProductDetail/Nichicon/USR1C221MDD" H 8100 2125 50  0001 C CNN "Mouser/http"
 	1    8100 2125
 	0    -1   -1   0   
 $EndComp
@@ -1415,7 +1415,7 @@ F 1 "220uF/16V" H 2255 3630 30  0000 C CNN
 F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 2085 3540 50  0001 C CNN
 F 3 "http://nichicon-us.com/english/products/pdfs/e-usa_usr.pdf" H 2085 3540 50  0001 C CNN
 F 4 "493-15996-ND" H 2085 3540 50  0001 C CNN "Digi-Key"
-F 5 "Würth Elektronik" H 2085 3540 50  0001 C CNN "Manufacturer"
+F 5 "Nichicon" H 2085 3540 50  0001 C CNN "Manufacturer"
 F 6 "USR1C221MDD" H 2085 3540 50  0001 C CNN "Part Number"
 F 7 "https://www.digikey.com/product-detail/en/nichicon/UVR1C221MED1TA/493-6096-1-ND/3438470" V 2085 3540 50  0001 C CNN "Digi-Key/http"
 F 8 "647-USR1C221MDD" H 2085 3540 50  0001 C CNN "Mouser Part Number"

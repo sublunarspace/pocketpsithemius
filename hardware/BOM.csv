@@ -3,7 +3,7 @@ Reference,Quantity,Value,Description,Datasheet,Manufacturer,Part Number,Digikey 
 C1,1,1uF,Capacitor,http://www.vishay.com/docs/45171/kseries.pdf,Vishay,K105Z20Y5VF5TH5,BC1168CT-ND,594-K105Z20Y5VF5TH5
 "C2, C5, C10",3,0.1uF,Capacitor,http://www.vishay.com/docs/45171/kseries.pdf,Vishay,K104K15X7RF5TH5,BC1101CT-ND,594-K104K15X7RF5TH5
 C3,1,0.1uF/35V,Pol. Capacitor,https://www.nichicon.co.jp/english/products/pdfs/e-uma.pdf,Nishicon,UMA1H0R1MCD2TP,493-10420-3-ND,N/A
-C4,1,10uF/10V,Pol. Capacitor,http://nichicon-us.com/english/products/pdfs/e-usv.pdf,Vishay,USV1C100MFD,493-16020-ND,647-USV1C100MFD1TE647-USV1C100MFD1TE
+C4,1,10uF/10V,Pol. Capacitor,http://nichicon-us.com/english/products/pdfs/e-usv.pdf,Vishay,USV1C100MFD,493-16020-ND,647-USV1C100MFD1TE
 "C6, C11",2,220uF/16V,Pol. Capacitor,http://nichicon-us.com/english/products/pdfs/e-usa_usr.pdf,Nishicon,USR1C221MDD,493-15996-ND,647-USR1C221MDD
 D1,1,LED_RGBA,RGB LED,https://katalog.we-online.de/led/datasheet/156125M173000.pdf,Würth Elektronik,156125M173000,732-11426-1-ND,710-156125M173000
 "D2, D3, D4",3,UV,UV LED,http://static.vcclite.com/pdf/VAOL-5GUV8T4-LED-5mm-UV.pdf,Nichia,VAOL-5GUV8T4,VAOL-5GUV8T4-ND,593-VAOL5GUV8T4

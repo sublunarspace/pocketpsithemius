@@ -206,7 +206,7 @@ Wire Wire Line
 Wire Wire Line
 	1075 7450 1175 7450
 $Comp
-L trithemius_bot-rescue:AVR-ISP-6-Connector-avr-isp-6-connector J4
+L avr-isp-6-connector:AVR-ISP-6-Connector J4
 U 1 1 5E56B76F
 P 6125 4325
 F 0 "J4" H 6525 4825 50  0000 R CNN
@@ -922,7 +922,7 @@ Wire Wire Line
 Wire Wire Line
 	4975 875  5175 875 
 $Comp
-L trithemius_bot-rescue:ATtiny261A-SU-MCU_Microchip_ATtiny-attiny261a-su-mcu_microchip_attiny U1
+L attiny261a-su-mcu_microchip_attiny:ATtiny261A-SU-MCU_Microchip_ATtiny U1
 U 1 1 5E9E3E14
 P 3450 4350
 F 0 "U1" H 2921 4396 50  0000 R CNN
@@ -1193,8 +1193,8 @@ F 9 "https://www2.mouser.com/ProductDetail/Toshiba/TLP222A-2F" H 4675 975 50  00
 	1    0    0    -1  
 $EndComp
 $Comp
-L trithemius_bot-rescue:TLP222A-2-tlp222a-2 U2
-U 1 1 5EA9EAE3
+L tlp222a-2:TLP222A-2 U2
+U 2 1 5EA9EAE3
 P 3650 6355
 F 0 "U2" H 3650 6680 50  0000 C CNN
 F 1 "TLP222A" H 3650 6589 50  0000 C CNN
@@ -1207,7 +1207,7 @@ F 7 "Toshiba" H 3650 6355 50  0001 C CNN "Manufacturer"
 F 8 "TLP222A-2(F)" H 3650 6355 50  0001 C CNN "Part Number"
 F 9 "757-TLP222A-2(F)" H 3650 6355 50  0001 C CNN "Mouser Part Number"
 F 10 "https://www2.mouser.com/ProductDetail/Toshiba/TLP222A-2F" H 3650 6355 50  0001 C CNN "Mouser/http"
-	1    3650 6355
+	2    3650 6355
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1264,7 +1264,7 @@ F 3 "" H 9650 5125 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L trithemius_bot-rescue:JS202011AQN-js202011aqn SW4
+L js202011aqn:JS202011AQN SW4
 U 1 1 5EA5EF52
 P 10200 4700
 F 0 "SW4" H 10750 4725 50  0000 C CNN
@@ -1283,7 +1283,7 @@ F 10 "JS202011AQN" H 10200 4700 50  0001 C CNN "Part Number"
 $EndComp
 NoConn ~ 8275 5000
 $Comp
-L trithemius_bot-rescue:PJ-051AH-PJ-051AH J2
+L pj-051ah:PJ-051AH J2
 U 1 1 5EACBBC2
 P 7775 4800
 F 0 "J2" H 7775 5175 50  0000 C CNN
@@ -1453,7 +1453,7 @@ pb_B
 Wire Wire Line
 	4775 1825 5225 1825
 $Comp
-L trithemius_bot-rescue:TLP4227GF-2020-05-09_17-22-46 U3
+L tlp4227gf:TLP4227GF U3
 U 1 1 5EBE04E3
 P 5125 2325
 F 0 "U3" H 5425 2512 60  0000 C CNN
