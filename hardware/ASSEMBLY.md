@@ -33,7 +33,7 @@ R16 is a large wirewound resistor. Do that one at [Step 4](#4-power-switch---spe
 
 ## 2. Unpolarized Capacitors
 
-The next highest components are the unpolarized radial leaded multilayer ceramic capacitors. 
+The next higher components are the unpolarized radial leaded multilayer ceramic capacitors. 
 
 They are yellow andf have two equally long legs. There are three tiny ones (0.1uF) and one a bit bigger one (1uF).
 
