@@ -97,7 +97,7 @@ Place the four 7mm long black distance bolts onto the screws sticking through th
 
 Now place the glossy black plexiglass disk onto the screws until it firmly rests on the distance bolts.
 
-Finally place the four washers and nuts and tighten all screws.
+Finally place the four washers and nuts and tighten all screws. Stick the four adhesive rubber bumpers next to the nuts, so the device has feet.
 
 ## 10. Finalizing
 
