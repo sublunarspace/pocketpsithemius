@@ -25,7 +25,7 @@ R5,1,10,Resistor,https://www.seielect.com/catalog/sei-cf_cfm.pdf,Stackpole Elect
 R16,1,4,Resistor,https://www.seielect.com/catalog/sei-cf_cfm.pdf,Stackpole Electronics,WW1AFT4R00,WW1AFT4R00-ND,N/A
 "SW1, SW2, SW3",3,B3F-4050,Switch,https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf,Omron,B3F-4050,SW413-ND,653-B3F-4050
 "SW1, SW2, SW3",3,,Switch Cap,https://omronfs.omron.com/en_US/ecb/products/pdf/en-b32.pdf,Omron,B32-1610 ,SW847-ND,653-B32-1610
-SW4,1,JS202011AQN,Switch,https://www.ckswitches.com/media/1422/js.pdf,C & K,JS202011AQN,401-2000-ND,611-JS202011AQN
+S1,1,JS202011AQN,Switch,https://www.ckswitches.com/media/1422/js.pdf,C & K,JS202011AQN,401-2000-ND,611-JS202011AQN
 U1,1,ATtiny84A-PU,Microcontroller,http://ww1.microchip.com/downloads/en/DeviceDoc/doc8183.pdf,Microchip Technology,ATTINY84-20PU,ATTINY84-20PU-ND,556-ATTINY84-20PU
 U2,1,TLP222A,Optical Relay,https://toshiba.semicon-storage.com/info/docget.jsp?did=17036&prodName=TLP222A,Toshiba,TLP222A-2(F),TLP222A-2F-ND,757-TLP222A-2(F)
 U3,1,TLP4227GF,Optical Relay,http://toshiba.semicon-storage.com/info/docget.jsp?did=17079&prodName=TLP4227G-2,Toshiba,TLP4227GF,TLP4227GF-ND,757-TLP4227G(F)

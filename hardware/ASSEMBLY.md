@@ -55,7 +55,7 @@ Now, identify the four different ICs and stick them into their footprints from t
 
 ## 4. Power Switch & Special Resistors
 
-Now proceed with the 6 legged power switch SW4 . Make sure the switch points outward away from the PCB disk. Do the same with the three legged variable resistor VR1.
+Now proceed with the 6 legged power switch S1 . Make sure the switch points outward away from the PCB disk. Do the same with the three legged variable resistor VR1.
 
 Now solder the wire wound resistor R16. It's a bit tricky to get it solidly fixed due to the thick leads and large through-holes. Use more solder than with the other parts. Clip of the excess leads when cooled down.
 
