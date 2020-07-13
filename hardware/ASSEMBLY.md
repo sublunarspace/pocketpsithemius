@@ -1,8 +1,8 @@
 - [Assembling the DIY Psithemius](#assembling-the-diy-psithemius)
   * [1. Resistors](#1-resistors)
-  * [2. Unpolarized Capacitors](#2-unpolarized-capacitors)
-  * [3. Integrated Circuit Chips](#3-integrated-circuit-chips)
-  * [4. Power Switch & Special Resistors](#4-power-switch---special-resistors)
+  * [2. Integrated Circuit Chips](#2-integrated-circuit-chips)
+  * [3. Power Switch & Special Resistors](#3-power-switch---special-resistors)
+  * [4. Unpolarized Capacitors](#4-unpolarized-capacitors)
   * [5. Rear Connectors](#5-rear-connectors)
   * [6. Polarized Capacitors](#6-polarized-capacitors)
   * [7. UV LEDs](#7-uv-leds)
@@ -31,17 +31,7 @@ Stick them in from the top of the PCB, turn the PCB around and lay it flat on a 
 
 R16 is a large wirewound resistor. Do that one at [Step 4](#4-power-switch---special-resistors).
 
-## 2. Unpolarized Capacitors
-
-The next higher components are the unpolarized radial leaded multilayer ceramic capacitors. 
-
-They are yellow andf have two equally long legs. There are three tiny ones (0.1uF) and one a bit bigger one (1uF).
-
-Again, stick them in from the top of the PCB, turn the PCB around and lay it flat on a table. Solder the capacitor leads to the through-holes and clip the excess off.
-
-Revision 11 of the Psithemius has three additional capacitor footprints C7, C8, C9 marked on the PCB. Just ignore them. They will remain empty.
-
-## 3. Integrated Circuit Chips
+## 2. Integrated Circuit Chips
 
 Now, identify the four different ICs and stick them into their footprints from the top. For each IC make sure the tiny dot on the chip marking pin 1 is placed into the square plated through-hole marking pin 1. Be careful to not push too hard and avoid bending their legs. Turn the PCB around and lay it flat on a table. Solder all legs.
 
@@ -53,11 +43,21 @@ Now, identify the four different ICs and stick them into their footprints from t
 |U4         | black |         8|
 
 
-## 4. Power Switch & Special Resistors
+## 3. Power Switch & Special Resistors
 
-Now proceed with the 6 legged power switch S1 . Make sure the switch points outward away from the PCB disk. Do the same with the three legged variable resistor VR1.
+Now proceed with the 6 legged power switch S1. Make sure the switch points outward away from the PCB disk. Do the same with the three legged variable resistor VR1.
 
 Now solder the wire wound resistor R16. It's a bit tricky to get it solidly fixed due to the thick leads and large through-holes. Use more solder than with the other parts. Clip of the excess leads when cooled down.
+
+## 4. Unpolarized Capacitors
+
+The next higher components are the unpolarized radial leaded multilayer ceramic capacitors. 
+
+They are yellow andf have two equally long legs. There are three tiny ones (0.1uF) and one a bit bigger one (1uF).
+
+Again, stick them in from the top of the PCB, turn the PCB around and lay it flat on a table. Solder the capacitor leads to the through-holes and clip the excess off.
+
+Revision 11 of the Psithemius has three additional capacitor footprints C7, C8, C9 marked on the PCB. Just ignore them. They will remain empty.
 
 ## 5. Rear Connectors
 
